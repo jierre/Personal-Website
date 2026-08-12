@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Intel One Mono", monospace;
+    width: 100%;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 140px;
+    width: 100%;
+    gap: 80px;
+}
+
+.img img {
+    width: 390px;
+    height: 621px;
+    filter: brightness(120%);
+}
+
+.hero {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    max-width: 800px; 
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.hero-content.up {
+    height: 200px
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+}
+
+.location img {
+    margin-top: 17px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+
+}
+.name h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.bio p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    letter-spacing: 1.3px;
+}
+
+.bio-2 {
+    margin: 0;
+}
+.bio-2 p {
+    font-weight: 500;
+    line-height: 0.5;
+}
+
+.socials-hero {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 54%;
+}
+
+.btn {
+    position:relative;
+    background-color: black;
+    font-size: 1em;
+    padding: 10px;
+    width: 50%;
+    text-align: left;
+    border-radius: 7px;
+    letter-spacing: 1.3px;
+    margin-right: 10px;
+}
+
+.btn span {
+    padding-left: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.btn img {
+    position: absolute;
+    bottom: 25%;
+    left: 80%;
+    height: 17px;
+    width: 17px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.8s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    background-color: #181717;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.hero-icons img {
+    width: 20px;
+    height: 21px;
+}
+
+.hero-icons img:nth-child(2) {
+    height: 19px;
+}
+.hero-icons img:nth-child(3) {
+    width: 22px;
+    height: 24px;
+}
+
+.hero-icons img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+
+.second{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 150px;
+    max-width: 2100px;
+    height: 80vh;
+    width: 100%;
+    gap: 80px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 20px;
+}
+
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+}
+
+.techstack {
+    width: 75%;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.stack-content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.second h3 {
+    font-size: 1.5em;
+}
+
+.about p {
+    line-height: 1.5;
+    font-size: 1.1em;
+    letter-spacing: 1.3px;
+}
+
+.timeline-item p {
+    line-height: 1.2;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+}
+
+.timeline-item h4 {
+    font-size: 1.2em;
+
+}
+
+.stack-item {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 4px 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.stack-item img {
+    width: 17px;
+    height: 17px;
+
+}
+
+.stack-text {
+    font-size: 0.8em;
+    margin: 0;
+}
+

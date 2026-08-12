@@ -1,0 +1,41 @@
+.tech-stack-section {
+  margin-top: 30px;
+
+}
+/* Container that hides overflow */
+.logo-marquee {
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px; /* Adjust width to fit your design */
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Fades edges smoothly */
+}
+
+/* Moving flex track */
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: scrollLoop 12s linear infinite;
+}
+
+/* Pause animation when hovering over it */
+.logo-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Smooth continuous animation */
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves half the track width so duplicate seamlessly takes over */
+  }
+}
+
+/* Optional styling for tech items */
+.tech-item img{
+  height: 40px;
+  width: 40px;
+}
