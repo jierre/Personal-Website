@@ -333,6 +333,15 @@ body {
     color: black;
 }
 
+.social-link a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+}
+
 .social-link img {
     height: 15px;
     width: 15px;
