@@ -133,22 +133,23 @@ body {
 
 }
 
-.hero-icons img {
+.hero-icons a {
+    display: inline-flex;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.hero-icon {
     width: 20px;
     height: 21px;
-}
-
-.hero-icons img:nth-child(2) {
-    height: 19px;
-}
-.hero-icons img:nth-child(3) {
-    width: 22px;
-    height: 24px;
-}
-
-.hero-icons img:hover {
-    transform: scale(1.1);
+    display: block;
     transition: transform 0.3s ease;
+}
+
+
+.hero-icon:hover {
+    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -326,20 +327,12 @@ body {
     flex-direction: column;
     gap: 10px;
 }
-
-.social-link a {
-    font-size: 0.9rem;
+.social-container a {
     text-decoration: none;
-    color: black;
 }
-
-.social-link a::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
+.social-link span {
+    font-size: 0.9rem;
+    color: black;
 }
 
 .social-link img {
