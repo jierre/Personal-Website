@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="cert.css">
     <link rel="stylesheet" href="try.css">
     <title>John Pierre</title>
 </head>
@@ -234,87 +235,179 @@
             </div>
         </div>
 
-    <div class="carousel-section">
-        <!-- Section Header -->
-        <div class="section-header">
-            <span class="section-tag">PROJECTS</span>
+        <div class="carousel-section">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-tag">// PROJECTS</span>
+            </div>
+
+            <!-- Carousel Viewport -->
+            <div class="carousel-container" id="carousel">
+                
+                <!-- Card 1 -->
+                <div class="card" data-index="0">
+                    <div class="card-header">
+                        <span class="badge badge-black">#1 TEXT ANALYZER</span>
+                        <span class="badge badge-outline">PYTHON / HTML</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-icon">&lt;/&gt;</div>
+                        <h3 class="card-title">LV Text Analyzer</h3>
+                        <p class="card-desc">A real-time text analysis tool that instantly counts words, sentences, and letters.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://three0-days-of-python-1-o8p2.onrender.com" class="card-btn">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card" data-index="1">
+                    <div class="card-header">
+                        <span class="badge badge-black">#2 Portfolio</span>
+                        <span class="badge badge-outline">VANILLA JS</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-icon">&boxbox;</div>
+                        <h3 class="card-title">Website Portfolio</h3>
+                        <p class="card-desc">A personal website featuring my background, tech stack, experience, projects, certifications, and contact details.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://personal-website-six-theta-59.vercel.app/" class="card-btn">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card" data-index="2">
+                    <div class="card-header">
+                        <span class="badge badge-black">#3 Portfolio</span>
+                        <span class="badge badge-outline">HTML / CSS</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-icon">&infin;</div>
+                        <h3 class="card-title">Interactive Portfolio</h3>
+                        <p class="card-desc">An iOS 26 bubble-inspired interactive portfolio featuring a dynamic space-shooter mini-game where Iron Man battles enemy ships.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-btn">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card" data-index="3">
+                    <div class="card-header">
+                        <span class="badge badge-black">#4 RESUME</span>
+                        <span class="badge badge-outline">Python / JS</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-icon">&#9881;</div>
+                        <h3 class="card-title">Resume Builder</h3>
+                        <p class="card-desc">A tool that automatically formats user input into a clean Harvard-style resume with instant PDF download options.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-btn">View Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="carousel-controls">
+                <button class="nav-btn" id="prevBtn" aria-label="Previous Project">&larr;</button>
+                <div class="indicators" id="indicators"></div>
+                <button class="nav-btn" id="nextBtn" aria-label="Next Project">&rarr;</button>
+            </div>
         </div>
 
-        <!-- Carousel Viewport -->
-        <div class="carousel-container" id="carousel">
-            
-            <!-- Card 1 -->
-            <div class="card" data-index="0">
-                <div class="card-header">
-                    <span class="badge badge-black">#1 TEXT ANALYZER</span>
-                    <span class="badge badge-outline">PYTHON / HTML</span>
+        <section class="cert-section">
+            <div class="cert-header">
+                <div class="cert-header-left">
+                    <span class="cert-tag">// CERTIFICATIONS</span>
+                    <h2 class="cert-heading">Verified Credentials</h2>
                 </div>
-                <div class="card-body">
-                    <div class="project-icon">&lt;/&gt;</div>
-                    <h3 class="card-title">LV Text Analyzer</h3>
-                    <p class="card-desc">A real-time text analysis tool that instantly counts words, sentences, and letters.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="https://three0-days-of-python-1-o8p2.onrender.com" class="card-btn">View Details &rarr;</a>
+                
+                <!-- Up / Down Control Buttons -->
+                <div class="cert-controls">
+                    <button id="certUpBtn" class="cert-nav-btn" aria-label="Previous Certification">↑</button>
+                    <button id="certDownBtn" class="cert-nav-btn" aria-label="Next Certification">↓</button>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="card" data-index="1">
-                <div class="card-header">
-                    <span class="badge badge-black">#2 Portfolio</span>
-                    <span class="badge badge-outline">VANILLA JS</span>
+            <div class="cert-viewport">
+            <!-- Vertical Progress Track -->
+                <div class="cert-timeline-rail">
+                    <div class="cert-progress-bar" id="certProgressBar"></div>
                 </div>
-                <div class="card-body">
-                    <div class="project-icon">&boxbox;</div>
-                    <h3 class="card-title">Website Portfolio</h3>
-                    <p class="card-desc">A personal website featuring my background, tech stack, experience, projects, certifications, and contact details.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="https://personal-website-six-theta-59.vercel.app/" class="card-btn">View Details &rarr;</a>
+
+                <!-- Cards Stack Container -->
+                    <div class="cert-cards-container" id="certContainer">
+                
+                <!-- Card 1 -->
+                    <article class="cert-card">
+                        <div class="cert-card-top">
+                            <span class="cert-issuer">Harvard</span>
+                            <span class="cert-date">2026</span>
+                        </div>
+                        <h3 class="cert-title">CS50's Introduction to Computer Science</h3>
+                        <p class="cert-desc">
+                        An entry-level course on the intellectual enterprises of computer science and the art of programming, covering C, Python, SQL, HTML, CSS, and JavaScript.
+                        </p>
+                        <div class="cert-card-bottom">
+                            <span class="cert-id">ID: blank</span>
+                            <a href="#" target="_blank" class="cert-link">Verify Credential ↗</a>
+                        </div>
+                    </article>
+
+                <!-- Card 2 -->
+                    <article class="cert-card">
+                        <div class="cert-card-top">
+                            <span class="cert-issuer">Harvard</span>
+                            <span class="cert-date">2026</span>
+                        </div>
+                        <h3 class="cert-title">CS50's Web Programming with Python and JavaScript</h3>
+                        <p class="cert-desc">
+                        An in-depth exploration of full-stack web development using Django, JavaScript, and SQL to design, build, and scale modern web applications.
+                        </p>
+                        <div class="cert-card-bottom">
+                            <span class="cert-id">ID: Blank</span>
+                            <a href="#" target="_blank" class="cert-link">Verify Credential ↗</a>
+                        </div>
+                    </article>
+
+                <!-- Card 3 -->
+                    <article class="cert-card">
+                        <div class="cert-card-top">
+                            <span class="cert-issuer">Harvard</span>
+                            <span class="cert-date">2026</span>
+                        </div>
+                        <h3 class="cert-title">CS50's Introduction to Computer Science</h3>
+                        <p class="cert-desc">
+                        An entry-level course on the intellectual enterprises of computer science and the art of programming, covering C, Python, SQL, HTML, CSS, and JavaScript.
+                        </p>
+                        <div class="cert-card-bottom">
+                            <span class="cert-id">ID: Blank</span>
+                            <a href="#" target="_blank" class="cert-link">Verify Credential ↗</a>
+                        </div>
+                    </article>
+
+                <!-- Card 4 -->
+                    <article class="cert-card">
+                        <div class="cert-card-top">
+                            <span class="cert-issuer">Harvard</span>
+                            <span class="cert-date">2026</span>
+                        </div>
+                        <h3 class="cert-title">CS50's Web Programming with Python and JavaScript</h3>
+                        <p class="cert-desc">
+                        An in-depth exploration of full-stack web development using Django, JavaScript, and SQL to design, build, and scale modern web applications.
+                        </p>
+                        <div class="cert-card-bottom">
+                            <span class="cert-id">ID: Blank</span>
+                            <a href="#" target="_blank" class="cert-link">Verify Credential ↗</a>
+                        </div>
+                    </article>
                 </div>
             </div>
+    </section>
 
-            <!-- Card 3 -->
-            <div class="card" data-index="2">
-                <div class="card-header">
-                    <span class="badge badge-black">#3 Portfolio</span>
-                    <span class="badge badge-outline">HTML / CSS</span>
-                </div>
-                <div class="card-body">
-                    <div class="project-icon">&infin;</div>
-                    <h3 class="card-title">Interactive Portfolio</h3>
-                    <p class="card-desc">An iOS 26 bubble-inspired interactive portfolio featuring a dynamic space-shooter mini-game where Iron Man battles enemy ships.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="card-btn">View Details &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="card" data-index="3">
-                <div class="card-header">
-                    <span class="badge badge-black">#4 RESUME</span>
-                    <span class="badge badge-outline">Python / JS</span>
-                </div>
-                <div class="card-body">
-                    <div class="project-icon">&#9881;</div>
-                    <h3 class="card-title">Resume Builder</h3>
-                    <p class="card-desc">A tool that automatically formats user input into a clean Harvard-style resume with instant PDF download options.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="card-btn">View Details &rarr;</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <div class="carousel-controls">
-            <button class="nav-btn" id="prevBtn" aria-label="Previous Project">&larr;</button>
-            <div class="indicators" id="indicators"></div>
-            <button class="nav-btn" id="nextBtn" aria-label="Next Project">&rarr;</button>
-        </div>
-    </div>
     <script src="slider.js" defer></script>
+    <script src="cert.js"></script>
 </body>
 </html>
