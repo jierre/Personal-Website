@@ -9,6 +9,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
     width: 100%;
 }
 
@@ -25,8 +27,8 @@ body {
 }
 
 .img img {
-    width: 390px;
-    height: 621px;
+    width: 100%;
+    height: auto;
     filter: brightness(120%);
 }
 
@@ -69,6 +71,7 @@ body {
     font-size: 1.2em;
     line-height: 1.5;
     letter-spacing: 1.3px;
+    text-align: justify;
 }
 
 .bio-2 {
@@ -83,7 +86,7 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
-    width: 54%;
+    width: 100%;
 }
 
 .btn {
@@ -91,7 +94,8 @@ body {
     background-color: black;
     font-size: 1em;
     padding: 10px;
-    width: 50%;
+    box-sizing: border-box;
+    width: 190px;
     text-align: left;
     border-radius: 7px;
     letter-spacing: 1.3px;
@@ -99,7 +103,7 @@ body {
 }
 
 .btn span {
-    padding-left: 20px;
+    margin-left: 5px;
     font-weight: 600;
     color: white;
 }
@@ -182,29 +186,41 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     width: 50%;
+    max-width: 800px; 
     gap: 20px;
 }
 
+
+
 .about {
     border: 1px solid rgb(124, 124, 124);
+    width: 100%;
     padding: 50px;
+    box-sizing: border-box;
 }
+
 .experience {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 25%;
+    max-width: 800px; 
     border: 1px solid rgb(124, 124, 124);
+    box-sizing: border-box;
     padding: 50px 30px;
 }
 
 .skills {
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
+    width: 100%;
+    gap: 20px;
 }
 
 .techstack {
-    width: 75%;
+    width: 70%;
 }
+
 
 .timeline {
     display: flex;
@@ -215,6 +231,7 @@ body {
 .stack-content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -224,8 +241,9 @@ body {
 
 .about p {
     line-height: 1.5;
-    font-size: 1.1em;
+    font-size: 1rem;
     letter-spacing: 1.3px;
+    text-align: justify;
 }
 
 .timeline-item p {
@@ -263,7 +281,66 @@ body {
     margin: 0;
 }
 
+@media (max-width: 1024px) {
+    .first {
+        margin:0;
+        width:100%;
+    }
+    .socials-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bio-2 p {
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .btn {
+        position:relative;
+        background-color: black;
+        font-size: 1em;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 190px;
+        text-align: left;
+        border-radius: 7px;
+        letter-spacing: 1.3px;
+        margin-right: 10px;
+    }
+
+    .btn span {
+        margin-left: 5px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: white;
+    }
 
 
+    .info, 
+    .experience {
+        width: 100%;
+    }
+    .second h3 {
+        font-size: 1.2em;
+    }
+    .main-container p {
+        font-size: 0.9rem;
+    }
 
+    .about p {
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
+
+    .timeline-item h4 {
+        font-size: 1em;
+    }
+
+    .about, 
+    .experience {
+        padding: 24px 16px;
+    }
+}
 
