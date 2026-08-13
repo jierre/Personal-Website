@@ -1,0 +1,239 @@
+/* --- Carousel Section Wrapper --- */
+.carousel-section {
+  width: 100%;
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+  color: #000;
+  box-sizing: border-box;
+  overflow: hidden !important;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.view-all-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+/* --- 3D Viewport --- */
+.carousel-container {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  perspective: 1000px;
+  overflow: hidden !important;
+}
+
+/* --- Card Base Styling --- */
+.card {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 150px); /* Center anchor point for 300px width card */
+  width: 300px;
+  height: 280px;
+  background: #ffffff;
+  border: 1px solid #868686;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  
+  /* Smooth transform transition */
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.45s ease, 
+              box-shadow 0.3s ease;
+}
+
+/* Header Badges */
+.card-header {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.badge-black {
+  background: #000;
+  color: #fff;
+}
+
+.badge-outline {
+  border: 1px solid #ccc;
+  color: #555;
+  background: #fff;
+}
+
+/* Content */
+.card-body {
+  margin: 12px 0;
+}
+
+.project-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-family: monospace;
+}
+
+.card-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.card-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+}
+
+/* Footer Button */
+.card-footer {
+  margin-top: auto;
+}
+
+.card-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.card-btn:hover {
+  background: #333;
+}
+
+/* --- Controls --- */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.nav-btn {
+  background: #ffffff;
+  border: 1px solid #000;
+  color: #000;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.nav-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.indicators {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: #000;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 280px !important;
+  }
+
+  .card {
+    width: 220px !important;
+    height: 250px !important;
+    left: calc(50% - 110px) !important;
+    padding: 12px !important;
+  }
+
+  .badge {
+    font-size: 0.55rem !important; /* ~8.8px */
+    padding: 0.2rem 0.4rem !important;
+  }
+
+  .project-icon {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* Specificity boost for title (targets tag + class) */
+  .card h1,
+  .card h2,
+  .card h3,
+  .card .card-title {
+    font-size: 1rem !important; /* ~12px - Safe minimum height */
+    line-height: 1.25 !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* Specificity boost for description */
+  .card p,
+  .card .card-desc {
+    font-size: 0.80rem !important; /* ~10.8px - Safe render limit */
+    line-height: 1.3 !important;
+  }
+
+  .card-btn {
+    font-size: 0.70rem !important;
+    padding: 0.35rem 0.65rem !important;
+  }
+}
+
