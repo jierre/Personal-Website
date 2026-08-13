@@ -281,7 +281,20 @@ body {
     margin: 0;
 }
 
+.socials p {
+    margin:0;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 1024px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        box-sizing: border-box;
+        width: 100%;
+    }
     .first {
         margin:0;
         width:100%;
@@ -341,6 +354,17 @@ body {
     .about, 
     .experience {
         padding: 24px 16px;
+    }
+
+    .techstack {
+        width: 100%;
+
+    }
+    .stack-item {
+        padding: 3px 10px;
+    }
+    .stack-text {
+        font-size: 0.1em;
     }
 }
 
