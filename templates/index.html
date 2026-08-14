@@ -1,323 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/slider.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/cert.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/try.css') }}">
-    <title>John Pierre</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class = "main-container">
-        <div class = "first reveal">
-            <div class = "img"><img src = "{{ url_for('static', filename = 'images/hero-pic.png') }}" alt="John Pierre"></div>
+        <section id = "home" class = "section-wrapper hero-section">
+            <div class = "first reveal">
+                <div class = "img"><img src = "{{ url_for('static', filename = 'images/hero-pic.png') }}" alt="John Pierre"></div>
 
-            <div class = "hero">
-                <div class = "hero-content up reveal">
-                    <div class = "name">
-                        <h1>JOHN</h1>
-                        <h1>PIERRE</h1>
-                        <h1>PAMPILON</h1>
-                    </div>
-                    <div class = "location">
-                        <img src = "{{ url_for('static', filename = 'images/location.svg') }}" alt="Location Icon">
-                        <p>Imus, Cavite</p>
-                    </div>
-                </div> 
+                <div class = "hero">
+                    <div class = "hero-content up reveal">
+                        <div class = "name">
+                            <h1>JOHN</h1>
+                            <h1>PIERRE</h1>
+                            <h1>PAMPILON</h1>
+                        </div>
+                        <div class = "location">
+                            <img src = "{{ url_for('static', filename = 'images/location.svg') }}" alt="Location Icon">
+                            <p>Imus, Cavite</p>
+                        </div>
+                    </div> 
 
-                <div class = "hero-content reveal">
-                    <div class = "bio">
-                        <p>I'm a Computer Science student passionate about software development 
-                        and artificial intelligence. 
-                        I enjoy building practical applications, learning new technologies, 
-                        and solving real-world problems through code.</p>
-                    </div>
-                </div>
-
-                <div class = "hero-content reveal">
-                    <div class = "bio-2" >
-                        <p>Computer Science Student | Aspiring AI Engineer</p>
-                        <p>@ The Polytechnic University of the Philippines</p>
-                    </div>
-                    <div class = "socials-hero reveal">
-                        <button class = "btn"><span>View Projects</span><img src="{{ url_for('static', filename = 'images/arrow-down.svg') }}" alt="arrow down"></button>
-                        <div class = "hero-icons">
-                            <a href = "https://github.com/jlpampilonpacs-art" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/github.svg') }}" alt="GitHub Icon"></a>
-                            <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/instagram.svg') }}" alt="instagram Icon"></a>
-                            <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/mail.svg') }}" alt="Email Icon"></a>
+                    <div class = "hero-content reveal">
+                        <div class = "bio">
+                            <p>I'm a Computer Science student passionate about software development 
+                            and artificial intelligence. 
+                            I enjoy building practical applications, learning new technologies, 
+                            and solving real-world problems through code.</p>
                         </div>
                     </div>
-                    <div class="tech-stack-section reveal">
-                        <div class="logo-marquee">
-                            <div class="marquee-track">
-                                <!-- First Set of Icons -->
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C"></span>
 
-                                <!-- Duplicate Set for Seamless Loop -->
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL"></span>
-                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C"></span>
+                    <div class = "hero-content reveal">
+                        <div class = "bio-2" >
+                            <p>Computer Science Student | Aspiring AI Engineer</p>
+                            <p>@ The Polytechnic University of the Philippines</p>
+                        </div>
+                        <div class = "socials-hero reveal">
+                            <button class = "btn"><span>View Projects</span><img src="{{ url_for('static', filename = 'images/arrow-down.svg') }}" alt="arrow down"></button>
+                            <div class = "hero-icons">
+                                <a href = "https://github.com/jlpampilonpacs-art" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/github.svg') }}" alt="GitHub Icon"></a>
+                                <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/instagram.svg') }}" alt="instagram Icon"></a>
+                                <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/mail.svg') }}" alt="Email Icon"></a>
+                            </div>
+                        </div>
+                        <div class="tech-stack-section reveal">
+                            <div class="logo-marquee">
+                                <div class="marquee-track">
+                                    <!-- First Set of Icons -->
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C"></span>
+
+                                    <!-- Duplicate Set for Seamless Loop -->
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL"></span>
+                                    <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class = "second reveal">
-            <div class = "info">
-                <div class = "about">
-                    <div class = "about-header">
-                        <img src = "{{ url_for('static', filename = 'images/user.svg') }}" alt = "About">
-                        <h3>ABOUT</h3>
+        <section id = "about" class="section-wrapper cards-section">
+            <div class = "second reveal">
+                <div class = "info">
+                    <div class = "about">
+                        <div class = "about-header">
+                            <img src = "{{ url_for('static', filename = 'images/user.svg') }}" alt = "About">
+                            <h3>ABOUT</h3>
+                        </div>
+                        
+                        <p>I'm a Computer Science student passionate about software development, artificial intelligence, and technology. I enjoy building projects that challenge me to think creatively and solve real-world problems through code.</p>
+                        <p>I’m constantly learning and experimenting with new tools, languages, and technologies to improve my skills. Whether I'm developing a web application, exploring AI, or working on a personal project, I enjoy the process of turning ideas into something useful and meaningful. My goal is to grow into a well-rounded software developer and eventually specialize in AI engineering.</p>
                     </div>
+                    <div class = "skills">
+                        <div class = "techstack reveal">
+                            <div class = "about-header">
+                                <img src = "{{ url_for('static', filename = 'images/layers.svg') }}" alt = "TechStack">
+                                <h3>TECHSTACK</h3>
+                            </div>
+                            <div class = "stack">
+
+                                <div class = "stack-container reveal">
+                                    <div class = "stack-title">FrontEnd</div>
+                                    <div class = "stack-content">
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript">
+                                            <p class = "stack-text">JavaScript</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React">
+                                            <p class = "stack-text">React</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML">
+                                            <p class = "stack-text">HTML</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS">
+                                            <p class = "stack-text">CSS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class = "stack-container reveal">
+                                    <div class = "stack-title">BackEnd</div>
+                                    <div class = "stack-content">
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python">
+                                            <p class = "stack-text">Python</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask">
+                                            <p class = "stack-text">Flask</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL">
+                                            <p class = "stack-text">SQL</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C">
+                                            <p class = "stack-text">C</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class = "stack-container reveal">
+                                    <div class = "stack-title">Tools</div>
+                                    <div class = "stack-content">
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/vscode.svg') }}" alt="VS Code">
+                                            <p class = "stack-text">VS Code</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/github.svg') }}" alt="Github" class = "icon-dark">
+                                            <p class = "stack-text">Github</p>
+                                        </div>
+
+                                        <div class = "stack-item">
+                                            <img src="{{ url_for('static', filename = 'images/loop/git.svg') }}" alt="Git">
+                                            <p class = "stack-text">Git</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "socials reveal">
+                            <div class = "about-header">
+                                <img src = "{{ url_for('static', filename = 'images/mail.svg') }}" alt = "Socials">
+                                <h3>SOCIALS</h3>
+                            </div>
+                            <p>Reach me on</p>
+                            <div class = "social-container">
+                                <a href = "https://github.com/jlpampilonpacs-art" target = "_blank">
+                                    <div class = "social-link">
+                                        <img src="{{ url_for('static', filename = 'images/github.svg') }}" alt="GitHub">
+                                        <span>GitHub</span>
+                                    </div>
+                                </a>
+
+                                <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank">
+                                    <div class = "social-link">
+                                        <img src="{{ url_for('static', filename = 'images/mail.svg') }}" alt="Email">
+                                        <span>Email</span>
+                                    </div>
+                                </a>
+                                <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank">
+                                    <div class = "social-link">
+                                        <img src="{{ url_for('static', filename = 'images/instagram.svg') }}" alt="Instagram">
+                                        <span>Instagram</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "experience reveal">
+                    <div class = "exp-header">
+                        <img src = "{{ url_for('static', filename = 'images/suitcase.svg') }}" alt = "Experience">
+                        <h3>EXPERIENCE</h3>
+                    </div>
+                    <div class = "timeline">
+
+                        <div class = "timeline-item reveal">
+                            <h4>Year 1 BS Computer Science</h4>
+                            <p>The Polytechnic University of the Philippines</p>
+                        </div>
+
+                        <div class = "timeline-item reveal">
+                            <h4>Personal Projects</h4>
+                            <p>Built web projects including a real-time text analyzer and a dynamic, interactive personal portfolio.</p>
+                        </div>
+
+                        <div class = "timeline-item reveal">
+                            <h4>Continuous Learning & Self-Study</h4>
+                            <p>I build my skills through self-study, courses, and hands-on projects.</p>
+                        </div>
+
+                        <div class = "timeline-item reveal">
+                            <h4>1st Place Web Design/Making</h4>
+                            <p>Designed and built a modern travel website featuring Bali’s top tourist attractions, accommodations, and essential travel information.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class = "section-wrapper">
+            <div class="carousel-section reveal">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <span class="section-tag">// PROJECTS</span>
+                </div>
+
+                <!-- Carousel Viewport -->
+                <div class="carousel-container" id="carousel">
                     
-                    <p>I'm a Computer Science student passionate about software development, artificial intelligence, and technology. I enjoy building projects that challenge me to think creatively and solve real-world problems through code.</p>
-                    <p>I’m constantly learning and experimenting with new tools, languages, and technologies to improve my skills. Whether I'm developing a web application, exploring AI, or working on a personal project, I enjoy the process of turning ideas into something useful and meaningful. My goal is to grow into a well-rounded software developer and eventually specialize in AI engineering.</p>
-                </div>
-                <div class = "skills">
-                    <div class = "techstack reveal">
-                        <div class = "about-header">
-                            <img src = "{{ url_for('static', filename = 'images/layers.svg') }}" alt = "TechStack">
-                            <h3>TECHSTACK</h3>
+                    <!-- Card 1 -->
+                    <div class="card" data-index="0">
+                        <div class="card-header">
+                            <span class="badge badge-black">#1 TEXT ANALYZER</span>
+                            <span class="badge badge-outline">PYTHON / HTML</span>
                         </div>
-                        <div class = "stack">
-
-                            <div class = "stack-container reveal">
-                                <div class = "stack-title">FrontEnd</div>
-                                <div class = "stack-content">
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript">
-                                        <p class = "stack-text">JavaScript</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React">
-                                        <p class = "stack-text">React</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML">
-                                        <p class = "stack-text">HTML</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS">
-                                        <p class = "stack-text">CSS</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class = "stack-container reveal">
-                                <div class = "stack-title">BackEnd</div>
-                                <div class = "stack-content">
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python">
-                                        <p class = "stack-text">Python</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask">
-                                        <p class = "stack-text">Flask</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL">
-                                        <p class = "stack-text">SQL</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C">
-                                        <p class = "stack-text">C</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class = "stack-container reveal">
-                                <div class = "stack-title">Tools</div>
-                                <div class = "stack-content">
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/vscode.svg') }}" alt="VS Code">
-                                        <p class = "stack-text">VS Code</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/github.svg') }}" alt="Github" class = "icon-dark">
-                                        <p class = "stack-text">Github</p>
-                                    </div>
-
-                                    <div class = "stack-item">
-                                        <img src="{{ url_for('static', filename = 'images/loop/git.svg') }}" alt="Git">
-                                        <p class = "stack-text">Git</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-body">
+                            <div class="project-icon">&lt;/&gt;</div>
+                            <h3 class="card-title">LV Text Analyzer</h3>
+                            <p class="card-desc">A real-time text analysis tool that instantly counts words, sentences, and letters.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://three0-days-of-python-1-o8p2.onrender.com" class="card-btn">View Details &rarr;</a>
                         </div>
                     </div>
 
-                    <div class = "socials reveal">
-                        <div class = "about-header">
-                            <img src = "{{ url_for('static', filename = 'images/mail.svg') }}" alt = "Socials">
-                            <h3>SOCIALS</h3>
+                    <!-- Card 2 -->
+                    <div class="card" data-index="1">
+                        <div class="card-header">
+                            <span class="badge badge-black">#2 Portfolio</span>
+                            <span class="badge badge-outline">VANILLA JS</span>
                         </div>
-                        <p>Reach me on</p>
-                        <div class = "social-container">
-                            <a href = "https://github.com/jlpampilonpacs-art" target = "_blank">
-                                <div class = "social-link">
-                                    <img src="{{ url_for('static', filename = 'images/github.svg') }}" alt="GitHub">
-                                    <span>GitHub</span>
-                                </div>
-                            </a>
-
-                            <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank">
-                                <div class = "social-link">
-                                    <img src="{{ url_for('static', filename = 'images/mail.svg') }}" alt="Email">
-                                    <span>Email</span>
-                                </div>
-                            </a>
-                            <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank">
-                                <div class = "social-link">
-                                    <img src="{{ url_for('static', filename = 'images/instagram.svg') }}" alt="Instagram">
-                                    <span>Instagram</span>
-                                </div>
-                            </a>
+                        <div class="card-body">
+                            <div class="project-icon">&boxbox;</div>
+                            <h3 class="card-title">Website Portfolio</h3>
+                            <p class="card-desc">A personal website featuring my background, tech stack, experience, projects, certifications, and contact details.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://personal-website-six-theta-59.vercel.app/" class="card-btn">View Details &rarr;</a>
                         </div>
                     </div>
+
+                    <!-- Card 3 -->
+                    <div class="card" data-index="2">
+                        <div class="card-header">
+                            <span class="badge badge-black">#3 Portfolio</span>
+                            <span class="badge badge-outline">HTML / CSS</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="project-icon">&infin;</div>
+                            <h3 class="card-title">Interactive Portfolio</h3>
+                            <p class="card-desc">An iOS 26 bubble-inspired interactive portfolio featuring a dynamic space-shooter mini-game where Iron Man battles enemy ships.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-btn">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card" data-index="3">
+                        <div class="card-header">
+                            <span class="badge badge-black">#4 RESUME</span>
+                            <span class="badge badge-outline">Python / JS</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="project-icon">&#9881;</div>
+                            <h3 class="card-title">Resume Builder</h3>
+                            <p class="card-desc">A tool that automatically formats user input into a clean Harvard-style resume with instant PDF download options.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-btn">View Details &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="carousel-controls">
+                    <button class="nav-btn" id="prevBtn" aria-label="Previous Project">&larr;</button>
+                    <div class="indicators" id="indicators"></div>
+                    <button class="nav-btn" id="nextBtn" aria-label="Next Project">&rarr;</button>
                 </div>
             </div>
+        </section>
 
-            <div class = "experience reveal">
-                <div class = "exp-header">
-                    <img src = "{{ url_for('static', filename = 'images/suitcase.svg') }}" alt = "Experience">
-                    <h3>EXPERIENCE</h3>
-                </div>
-                <div class = "timeline">
-
-                    <div class = "timeline-item reveal">
-                        <h4>Year 1 BS Computer Science</h4>
-                        <p>The Polytechnic University of the Philippines</p>
-                    </div>
-
-                    <div class = "timeline-item reveal">
-                        <h4>Personal Projects</h4>
-                        <p>Built web projects including a real-time text analyzer and a dynamic, interactive personal portfolio.</p>
-                    </div>
-
-                    <div class = "timeline-item reveal">
-                        <h4>Continuous Learning & Self-Study</h4>
-                        <p>I build my skills through self-study, courses, and hands-on projects.</p>
-                    </div>
-
-                    <div class = "timeline-item reveal">
-                        <h4>1st Place Web Design/Making</h4>
-                        <p>Designed and built a modern travel website featuring Bali’s top tourist attractions, accommodations, and essential travel information.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-section reveal">
-            <!-- Section Header -->
-            <div class="section-header">
-                <span class="section-tag">// PROJECTS</span>
-            </div>
-
-            <!-- Carousel Viewport -->
-            <div class="carousel-container" id="carousel">
-                
-                <!-- Card 1 -->
-                <div class="card" data-index="0">
-                    <div class="card-header">
-                        <span class="badge badge-black">#1 TEXT ANALYZER</span>
-                        <span class="badge badge-outline">PYTHON / HTML</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="project-icon">&lt;/&gt;</div>
-                        <h3 class="card-title">LV Text Analyzer</h3>
-                        <p class="card-desc">A real-time text analysis tool that instantly counts words, sentences, and letters.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://three0-days-of-python-1-o8p2.onrender.com" class="card-btn">View Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card" data-index="1">
-                    <div class="card-header">
-                        <span class="badge badge-black">#2 Portfolio</span>
-                        <span class="badge badge-outline">VANILLA JS</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="project-icon">&boxbox;</div>
-                        <h3 class="card-title">Website Portfolio</h3>
-                        <p class="card-desc">A personal website featuring my background, tech stack, experience, projects, certifications, and contact details.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://personal-website-six-theta-59.vercel.app/" class="card-btn">View Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card" data-index="2">
-                    <div class="card-header">
-                        <span class="badge badge-black">#3 Portfolio</span>
-                        <span class="badge badge-outline">HTML / CSS</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="project-icon">&infin;</div>
-                        <h3 class="card-title">Interactive Portfolio</h3>
-                        <p class="card-desc">An iOS 26 bubble-inspired interactive portfolio featuring a dynamic space-shooter mini-game where Iron Man battles enemy ships.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-btn">View Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card" data-index="3">
-                    <div class="card-header">
-                        <span class="badge badge-black">#4 RESUME</span>
-                        <span class="badge badge-outline">Python / JS</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="project-icon">&#9881;</div>
-                        <h3 class="card-title">Resume Builder</h3>
-                        <p class="card-desc">A tool that automatically formats user input into a clean Harvard-style resume with instant PDF download options.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-btn">View Details &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <div class="carousel-controls">
-                <button class="nav-btn" id="prevBtn" aria-label="Previous Project">&larr;</button>
-                <div class="indicators" id="indicators"></div>
-                <button class="nav-btn" id="nextBtn" aria-label="Next Project">&rarr;</button>
-            </div>
-        </div>
-
-        <section class="cert-section reveal">
+        <section id="certifications" class="cert-section reveal ">
             <div class="cert-header">
                 <div class="cert-header-left">
                     <span class="cert-tag">// CERTIFICATIONS</span>
@@ -405,10 +398,27 @@
                     </article>
                 </div>
             </div>
-    </section>
+        </section>
 
+        <div id="chat-container">
+            <div id="chat-box" style="height: 250px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+                {% for msg in messages %}
+                <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
+                {% endfor %}
+            </div>
+
+            <div style="margin-top: 10px;">
+                <input type="text" id="username" placeholder="Your Name" value="Visitor">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename = 'js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/cert.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/reveal.js') }}" defer></script>
-</body>
-</html>
+{% endblock %}

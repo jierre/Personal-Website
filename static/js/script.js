@@ -1,58 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = Array.from(document.querySelectorAll('.deck-card'));
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+// Initialize Pusher Client (Use your Pusher Key and Cluster)
+const pusher = new Pusher('8af230300b27d50ac58e', {
+    cluster: 'ap1'
+});
 
-  let activeIndex = 0;
-  const total = cards.length;
+// Subscribe to the chat channel
+const channel = pusher.subscribe('chat-channel');
 
-  function updateDeckState() {
-    cards.forEach((card, i) => {
-      // Remove previous position classes
-      card.classList.remove('is-center', 'is-left', 'is-right', 'is-hidden');
+// Listen for 'new-message' event broadcasted from Flask
+channel.bind('new-message', function(data) {
+    const chatBox = document.getElementById('chat-box');
+    const msgElement = document.createElement('p');
+    msgElement.innerHTML = `<strong>${data.sender_name}:</strong> ${data.message}`;
+    chatBox.appendChild(msgElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+});
 
-      const prevIndex = (activeIndex - 1 + total) % total;
-      const nextIndex = (activeIndex + 1) % total;
+// Send message function
+async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const usernameInput = document.getElementById('username');
+    const messageText = input.value.trim();
+    const sender = usernameInput.value.trim() || 'Anonymous';
 
-      if (i === activeIndex) {
-        card.classList.add('is-center');
-      } else if (i === prevIndex) {
-        card.classList.add('is-left');
-      } else if (i === nextIndex) {
-        card.classList.add('is-right');
-      } else {
-        card.classList.add('is-hidden');
-      }
+    if (!messageText) return;
+
+    await fetch('/api/send-message', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sender: sender, message: messageText })
     });
-  }
 
-  // Allow direct card clicks to focus them
-  cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-      if (index !== activeIndex) {
-        activeIndex = index;
-        updateDeckState();
-      }
+    input.value = ''; // Reset input
+}
+
+function toggleNav() {
+    const navBar = document.getElementById('nav-bar');
+    const overlay = document.getElementById('nav-overlay');
+    
+    navBar.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+// Auto-close sidebar when clicking any nav item on mobile
+document.querySelectorAll('.nav-item').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+            document.getElementById('nav-bar').classList.remove('active');
+            document.getElementById('nav-overlay').classList.remove('active');
+        }
     });
-  });
-
-  // Next / Prev Button Controls
-  nextBtn.addEventListener('click', () => {
-    activeIndex = (activeIndex + 1) % total;
-    updateDeckState();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    activeIndex = (activeIndex - 1 + total) % total;
-    updateDeckState();
-  });
-
-  // Keyboard Arrow navigation
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') nextBtn.click();
-    if (e.key === 'ArrowLeft') prevBtn.click();
-  });
-
-  // Initialize deck layout
-  updateDeckState();
 });

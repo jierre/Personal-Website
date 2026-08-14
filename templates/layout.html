@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/slider.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/cert.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/try.css') }}">
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+    <title>John Pierre</title>
+</head>
+<body>
+    <header class="top-header">
+        <span class="brand-name">John Pierre</span>
+        <button class="menu-toggle" onclick="toggleNav()" aria-label="Toggle Menu">☰</button>
+    </header>
+
+    <!-- 2. Dark Overlay Backdrop (for mobile) -->
+    <div id="nav-overlay" class="nav-overlay" onclick="toggleNav()"></div>
+
+    <nav id="nav-bar" class = "nav-bar">
+        <a class = "nav-item" href = "#home">JP</a>
+        <a class = "nav-item" href = "#about">ABOUT</a>
+        <a class = "nav-item" href = "#projects">PROJECTS</a>
+        <a class = "nav-item" href = "#certifications">CERTIFICATIONS</a>
+        <a class = "nav-item" href = "#">GITHUB</a>
+    </nav>
+    
+    <main class="main-content">
+        {% block content %}
+        <!-- Dynamic page content goes here -->
+        {% endblock %}
+    </main>
+
+        {% block scripts %}{% endblock %}
+</body>
+</html>
