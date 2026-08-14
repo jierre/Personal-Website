@@ -6,16 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="slider.css">
-    <link rel="stylesheet" href="cert.css">
-    <link rel="stylesheet" href="try.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/slider.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/cert.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/try.css') }}">
     <title>John Pierre</title>
 </head>
 <body>
     <div class = "main-container">
         <div class = "first reveal">
-            <div class = "img"><img src = "images/hero-pic.png" alt="John Pierre"></div>
+            <div class = "img"><img src = "{{ url_for('static', filename = 'images/hero-pic.png') }}" alt="John Pierre"></div>
 
             <div class = "hero">
                 <div class = "hero-content up reveal">
@@ -25,7 +25,7 @@
                         <h1>PAMPILON</h1>
                     </div>
                     <div class = "location">
-                        <img src = "images/location.svg" alt="Location Icon">
+                        <img src = "{{ url_for('static', filename = 'images/location.svg') }}" alt="Location Icon">
                         <p>Imus, Cavite</p>
                     </div>
                 </div> 
@@ -45,35 +45,35 @@
                         <p>@ The Polytechnic University of the Philippines</p>
                     </div>
                     <div class = "socials-hero reveal">
-                        <button class = "btn"><span>View Projects</span><img src="images/arrow-down.svg" alt="arrow down"></button>
+                        <button class = "btn"><span>View Projects</span><img src="{{ url_for('static', filename = 'images/arrow-down.svg') }}" alt="arrow down"></button>
                         <div class = "hero-icons">
-                            <a href = "https://github.com/jlpampilonpacs-art" target = "_blank"><img class = "hero-icon" src = "images/github.svg" alt="GitHub Icon"></a>
-                            <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank"><img class = "hero-icon" src = "images/instagram.svg" alt="instagram Icon"></a>
-                            <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank"><img class = "hero-icon" src = "images/mail.svg" alt="Email Icon"></a>
+                            <a href = "https://github.com/jlpampilonpacs-art" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/github.svg') }}" alt="GitHub Icon"></a>
+                            <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/instagram.svg') }}" alt="instagram Icon"></a>
+                            <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank"><img class = "hero-icon" src = "{{ url_for('static', filename = 'images/mail.svg') }}" alt="Email Icon"></a>
                         </div>
                     </div>
                     <div class="tech-stack-section reveal">
                         <div class="logo-marquee">
                             <div class="marquee-track">
-                            <!-- First Set of Icons -->
-                            <span class="tech-item"><img src="images/loop/js.svg" alt="JavaScript"></span>
-                            <span class="tech-item"><img src="images/loop/react.svg" alt="React"></span>
-                            <span class="tech-item"><img src="images/loop/html.svg" alt="HTML"></span>
-                            <span class="tech-item"><img src="images/loop/css.svg" alt="CSS"></span>
-                            <span class="tech-item"><img src="images/loop/python.svg" alt="Python"></span>
-                            <span class="tech-item"><img src="images/loop/flask.svg" alt="Flask"></span>
-                            <span class="tech-item"><img src="images/loop/sql.svg" alt="SQL"></span>
-                            <span class="tech-item"><img src="images/loop/c.svg" alt="C"></span>
+                                <!-- First Set of Icons -->
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C"></span>
 
-                            <!-- Duplicate Set for Seamless Loop -->
-                            <span class="tech-item"><img src="images/loop/js.svg" alt="JavaScript"></span>
-                            <span class="tech-item"><img src="images/loop/react.svg" alt="React"></span>
-                            <span class="tech-item"><img src="images/loop/html.svg" alt="HTML"></span>
-                            <span class="tech-item"><img src="images/loop/css.svg" alt="CSS"></span>
-                            <span class="tech-item"><img src="images/loop/python.svg" alt="Python"></span>
-                            <span class="tech-item"><img src="images/loop/flask.svg" alt="Flask"></span>
-                            <span class="tech-item"><img src="images/loop/sql.svg" alt="SQL"></span>
-                            <span class="tech-item"><img src="images/loop/c.svg" alt="C"></span>
+                                <!-- Duplicate Set for Seamless Loop -->
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL"></span>
+                                <span class="tech-item"><img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C"></span>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
             <div class = "info">
                 <div class = "about">
                     <div class = "about-header">
-                        <img src = "images/user.svg" alt = "About">
+                        <img src = "{{ url_for('static', filename = 'images/user.svg') }}" alt = "About">
                         <h3>ABOUT</h3>
                     </div>
                     
@@ -95,7 +95,7 @@
                 <div class = "skills">
                     <div class = "techstack reveal">
                         <div class = "about-header">
-                            <img src = "images/layers.svg" alt = "TechStack">
+                            <img src = "{{ url_for('static', filename = 'images/layers.svg') }}" alt = "TechStack">
                             <h3>TECHSTACK</h3>
                         </div>
                         <div class = "stack">
@@ -104,22 +104,22 @@
                                 <div class = "stack-title">FrontEnd</div>
                                 <div class = "stack-content">
                                     <div class = "stack-item">
-                                        <img src="images/loop/js.svg" alt="JavaScript">
+                                        <img src="{{ url_for('static', filename = 'images/loop/js.svg') }}" alt="JavaScript">
                                         <p class = "stack-text">JavaScript</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/react.svg" alt="React">
+                                        <img src="{{ url_for('static', filename = 'images/loop/react.svg') }}" alt="React">
                                         <p class = "stack-text">React</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/html.svg" alt="HTML">
+                                        <img src="{{ url_for('static', filename = 'images/loop/html.svg') }}" alt="HTML">
                                         <p class = "stack-text">HTML</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/css.svg" alt="CSS">
+                                        <img src="{{ url_for('static', filename = 'images/loop/css.svg') }}" alt="CSS">
                                         <p class = "stack-text">CSS</p>
                                     </div>
                                 </div>
@@ -129,22 +129,22 @@
                                 <div class = "stack-title">BackEnd</div>
                                 <div class = "stack-content">
                                     <div class = "stack-item">
-                                        <img src="images/loop/python.svg" alt="Python">
+                                        <img src="{{ url_for('static', filename = 'images/loop/python.svg') }}" alt="Python">
                                         <p class = "stack-text">Python</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/flask.svg" alt="Flask">
+                                        <img src="{{ url_for('static', filename = 'images/loop/flask.svg') }}" alt="Flask">
                                         <p class = "stack-text">Flask</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/sql.svg" alt="SQL">
+                                        <img src="{{ url_for('static', filename = 'images/loop/sql.svg') }}" alt="SQL">
                                         <p class = "stack-text">SQL</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/c.svg" alt="C">
+                                        <img src="{{ url_for('static', filename = 'images/loop/c.svg') }}" alt="C">
                                         <p class = "stack-text">C</p>
                                     </div>
                                 </div>
@@ -155,17 +155,17 @@
                                 <div class = "stack-content">
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/vscode.svg" alt="VS Code">
+                                        <img src="{{ url_for('static', filename = 'images/loop/vscode.svg') }}" alt="VS Code">
                                         <p class = "stack-text">VS Code</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/github.svg" alt="Github" class = "icon-dark">
+                                        <img src="{{ url_for('static', filename = 'images/loop/github.svg') }}" alt="Github" class = "icon-dark">
                                         <p class = "stack-text">Github</p>
                                     </div>
 
                                     <div class = "stack-item">
-                                        <img src="images/loop/git.svg" alt="Git">
+                                        <img src="{{ url_for('static', filename = 'images/loop/git.svg') }}" alt="Git">
                                         <p class = "stack-text">Git</p>
                                     </div>
                                 </div>
@@ -175,27 +175,27 @@
 
                     <div class = "socials reveal">
                         <div class = "about-header">
-                            <img src = "images/mail.svg" alt = "Socials">
+                            <img src = "{{ url_for('static', filename = 'images/mail.svg') }}" alt = "Socials">
                             <h3>SOCIALS</h3>
                         </div>
                         <p>Reach me on</p>
                         <div class = "social-container">
                             <a href = "https://github.com/jlpampilonpacs-art" target = "_blank">
                                 <div class = "social-link">
-                                    <img src="images/github.svg" alt="GitHub">
+                                    <img src="{{ url_for('static', filename = 'images/github.svg') }}" alt="GitHub">
                                     <span>GitHub</span>
                                 </div>
                             </a>
 
                             <a href = "mailto:jlpampilon.pacs@gmail.com" target = "_blank">
                                 <div class = "social-link">
-                                    <img src="images/mail.svg" alt="Email">
+                                    <img src="{{ url_for('static', filename = 'images/mail.svg') }}" alt="Email">
                                     <span>Email</span>
                                 </div>
                             </a>
                             <a href = "https://www.instagram.com/jpzz.zr/" target = "_blank">
                                 <div class = "social-link">
-                                    <img src="images/instagram.svg" alt="Instagram">
+                                    <img src="{{ url_for('static', filename = 'images/instagram.svg') }}" alt="Instagram">
                                     <span>Instagram</span>
                                 </div>
                             </a>
@@ -206,7 +206,7 @@
 
             <div class = "experience reveal">
                 <div class = "exp-header">
-                    <img src = "images/suitcase.svg" alt = "Experience">
+                    <img src = "{{ url_for('static', filename = 'images/suitcase.svg') }}" alt = "Experience">
                     <h3>EXPERIENCE</h3>
                 </div>
                 <div class = "timeline">
@@ -407,8 +407,8 @@
             </div>
     </section>
 
-    <script src="slider.js" defer></script>
-    <script src="cert.js"></script>
-    <script src="reveal.js"></script>
+    <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/cert.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/reveal.js') }}" defer></script>
 </body>
 </html>
