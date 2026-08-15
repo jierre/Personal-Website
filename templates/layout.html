@@ -22,20 +22,21 @@
     <!-- 2. Dark Overlay Backdrop (for mobile) -->
     <div id="nav-overlay" class="nav-overlay" onclick="toggleNav()"></div>
 
-    <nav id="nav-bar" class = "nav-bar">
-        <a class = "nav-item" href = "#home">JP</a>
-        <a class = "nav-item" href = "#about">ABOUT</a>
-        <a class = "nav-item" href = "#projects">PROJECTS</a>
-        <a class = "nav-item" href = "#certifications">CERTIFICATIONS</a>
-        <a class = "nav-item" href = "#">GITHUB</a>
-    </nav>
-    
-    <main class="main-content">
-        {% block content %}
-        <!-- Dynamic page content goes here -->
-        {% endblock %}
-    </main>
-
+    <div class = "page-layout">
+        <nav id="nav-bar" class = "nav-bar">
+            <a class = "nav-item" href = "#home">JP</a>
+            <a class = "nav-item" href = "#about">ABOUT</a>
+            <a class = "nav-item" href = "#projects">PROJECTS</a>
+            <a class = "nav-item" href = "#certifications">CERTIFICATIONS</a>
+            <a class = "nav-item" href = "#">GITHUB</a>
+        </nav>
+        
+        <main class="main-content">
+            {% block content %}
+            <!-- Dynamic page content goes here -->
+            {% endblock %}
+        </main>
+    </div>
         {% block scripts %}{% endblock %}
 </body>
 </html>
