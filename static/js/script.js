@@ -59,13 +59,12 @@ function toggleChat(event) {
     if (event && event.currentTarget === chatContainer && event.target !== chatContainer) {
         return;
     }
-    // 1. Calculate the center position of the clicked button
+
     if (event && event.currentTarget) {
         const rect = event.currentTarget.getBoundingClientRect();
         const originX = rect.left + (rect.width / 2);
         const originY = rect.top + (rect.height / 2);
 
-        // 2. Tell CSS to grow the overlay from those exact coordinates
         chatContainer.style.transformOrigin = `${originX}px ${originY}px`;
     }
 
