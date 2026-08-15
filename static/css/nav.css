@@ -1,0 +1,167 @@
+/* SHARED MUTED ICON STYLING (Matches text gray #666 instead of stark black) */
+.nav-icon {
+    color: #666666;
+    stroke: #666666;
+    transition: color 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+}
+
+/* 1. TOP SECTION */
+.nav-top {
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nav-brand {
+    text-decoration: none;
+}
+
+.brand-initials {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222222;
+    letter-spacing: -0.5px;
+}
+
+/* Availability Status Badge */
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981; /* Soft green */
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.status-text {
+    font-size: 0.68rem;
+    color: #777777;
+    white-space: nowrap;
+}
+
+/* Top Chat Button */
+.chat-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    background-color: #f7f7f7;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #555555;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.chat-btn:hover {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+
+.chat-btn:hover .nav-icon {
+    color: #ffffff;
+    stroke: #ffffff;
+}
+
+/* 2. MIDDLE SECTION (NAV LINKS) */
+.nav-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #a0a0a0;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    text-decoration: none;
+    color: #666666; /* Muted grayish */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-num {
+    font-size: 0.68rem;
+    color: #b0b0b0;
+    font-family: monospace;
+}
+
+.nav-item:hover {
+    color: #111111; /* Darkens cleanly on hover */
+    transform: translateX(3px);
+}
+
+.nav-item:hover .nav-num {
+    color: #111111;
+}
+
+/* 3. BOTTOM SECTION */
+.nav-bottom {
+    margin-bottom:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.resume-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.78rem;
+    color: #666666;
+    transition: color 0.2s ease;
+}
+
+.resume-btn:hover {
+    color: #111111;
+}
+
+.resume-btn:hover .nav-icon {
+    color: #111111;
+    stroke: #111111;
+}
+
+.nav-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-social-icons a:hover .nav-icon {
+    color: #111111;
+    stroke: #111111;
+    transform: translateY(-2px);
+}

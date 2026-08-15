@@ -22,7 +22,7 @@ body {
     display: none;
 }
 
-.nav-bar {
+.nav-bar-container {
     position:sticky;
     top: 0;
     left: 0;
@@ -31,10 +31,10 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 
-    gap:1.3rem;
-    padding-left: 50px;
+    padding-left: 30px;
+    padding-right: 20px;
     box-sizing: border-box;
     z-index: 1000;
     border-right: 1px solid rgba(184, 183, 183, 0.5);
@@ -45,6 +45,21 @@ body {
     font-size: 0.8rem;
     text-decoration: none;
     color: rgb(82, 81, 81);
+}
+
+.nav-bar button {
+    height: 15px;
+    width: 15px;
+    padding:0;
+    margin: 0;
+    background-color: white;
+    border: none;
+}
+
+.chat {
+    height: 15px;
+    width: 15px;
+    filter: opacity(0.5);
 }
 
 /* MAIN CONTAINER AND CONTENT */
@@ -472,7 +487,7 @@ body {
 
     /* NAVBAR & HEADER */
 
-    .nav-bar {
+    .nav-bar-container {
         position: fixed;
         width: 200px;
         background-color: #ffffff;
@@ -481,7 +496,7 @@ body {
         z-index: 1001;
     }
 
-    .nav-bar.active {
+    .nav-bar-container.active {
         transform: translateX(0);
     }
 

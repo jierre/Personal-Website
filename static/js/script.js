@@ -34,7 +34,7 @@ async function sendMessage() {
 }
 
 function toggleNav() {
-    const navBar = document.getElementById('nav-bar');
+    const navBar = document.getElementById('nav-bar-container');
     const overlay = document.getElementById('nav-overlay');
     
     navBar.classList.toggle('active');
@@ -45,7 +45,7 @@ function toggleNav() {
 document.querySelectorAll('.nav-item').forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 1024) {
-            document.getElementById('nav-bar').classList.remove('active');
+            document.getElementById('nav-bar-container').classList.remove('active');
             document.getElementById('nav-overlay').classList.remove('active');
         }
     });
