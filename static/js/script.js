@@ -33,6 +33,27 @@ async function sendMessage() {
     input.value = ''; // Reset input
 }
 
+// 1. Prevent the default anchor jump and URL update
+
+document.querySelectorAll('.nav-item').forEach(link => {
+    link.addEventListener('click', function (e) {
+        // 1. Prevent the default anchor jump and URL update
+        e.preventDefault();
+
+        // 2. Get the target section ID from the href attribute (e.g., "#home")
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        // 3. Smoothly scroll to the target section
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// TOGGLE NAV SECTION
 function toggleNav() {
     const navBar = document.getElementById('nav-bar-container');
     const overlay = document.getElementById('nav-overlay');
@@ -41,7 +62,7 @@ function toggleNav() {
     overlay.classList.toggle('active');
 }
 
-// Auto-close sidebar when clicking any nav item on mobile
+
 document.querySelectorAll('.nav-item').forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 1024) {
@@ -51,6 +72,18 @@ document.querySelectorAll('.nav-item').forEach(link => {
     });
 });
 
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1024) {
+        document.getElementById('nav-bar-container').classList.remove('active');
+        document.getElementById('nav-overlay').classList.remove('active');
+    }
+    else {
+        document.getElementById('nav-bar-container').classList.add('active');
+    }
+}) 
+
+
+// TOGGLE CHAT SECTION
 function toggleChat(event) {
     const chatContainer = document.getElementById('chat-container');
     const navBar = document.getElementById('nav-bar-container');
@@ -72,7 +105,7 @@ function toggleChat(event) {
     const isActive = chatContainer.classList.toggle('chat-reveal');
     document.body.classList.toggle('no-scroll', isActive)
     
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth <= 1024) {
         navBar.classList.toggle('active', !isActive);
         overlay.classList.toggle('active', !isActive);
     }
