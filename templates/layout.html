@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/cert.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/try.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/nav.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/chat.css') }}">
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <title>John Pierre</title>
 </head>
@@ -22,7 +23,7 @@
 
     <!-- 2. Dark Overlay Backdrop (for mobile) -->
     <div id="nav-overlay" class="nav-overlay" onclick="toggleNav()"></div>
-
+    
     <div class = "page-layout">
         <nav id="nav-bar-container" class = "nav-bar-container">
             <div class = "nav-bar nav-top">
@@ -37,12 +38,13 @@
                 </div>
 
                     <!-- Top Chat Action Button -->
-                <a href="mailto:your.email@example.com" class="chat-btn">
+
+                <button class="chat-btn" onclick="toggleChat(event)" >
                     <svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                     </svg>
-                    <span>Let's Talk</span>
-                </a>
+                    <span> Let's Talk!</span>
+                </button>
             </div>
 
             <div class = "nav-bar nav-middle">

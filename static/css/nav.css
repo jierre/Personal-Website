@@ -46,19 +46,24 @@
 }
 
 /* Top Chat Button */
-.chat-btn {
+button.chat-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 12px;
+    width: 100%;
+    gap: 10px;
+    padding: 15px;
     background-color: #f7f7f7;
     border: 1px solid #eaeaea;
     border-radius: 6px;
-    text-decoration: none;
     color: #555555;
     font-size: 0.75rem;
     font-weight: 500;
+    cursor: pointer;      
     transition: all 0.2s ease;
+}
+
+.chat-btn span {
+    letter-spacing: 1.5px;
 }
 
 .chat-btn:hover {
@@ -68,9 +73,10 @@
 }
 
 .chat-btn:hover .nav-icon {
-    color: #ffffff;
-    stroke: #ffffff;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
 }
+
 
 /* 2. MIDDLE SECTION (NAV LINKS) */
 .nav-middle {

@@ -1,5 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
+    <div id="chat-container" class="chat-container" onclick="toggleChat(event)">
+            <div id="chat-box" class="chat-box">
+                {% for msg in messages %}
+                <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
+                {% endfor %}
+            </div>
+
+            <div id ="chat-user" class="chat-user">
+                <input type="text" id="username" placeholder="Your Name" value="Visitor">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+    </div>
     <div class = "main-container">
         <section id = "home" class = "section-wrapper hero-section">
             <div class = "first reveal">
@@ -399,20 +412,6 @@
                 </div>
             </div>
         </section>
-
-        <div id="chat-container">
-            <div id="chat-box" style="height: 250px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
-                {% for msg in messages %}
-                <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
-                {% endfor %}
-            </div>
-
-            <div style="margin-top: 10px;">
-                <input type="text" id="username" placeholder="Your Name" value="Visitor">
-                <input type="text" id="chat-input" placeholder="Type a message...">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
     </div>
 {% endblock %}
 

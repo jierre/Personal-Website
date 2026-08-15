@@ -50,3 +50,39 @@ document.querySelectorAll('.nav-item').forEach(link => {
         }
     });
 });
+
+function toggleChat(event) {
+    const chatContainer = document.getElementById('chat-container');
+    const navBar = document.getElementById('nav-bar-container');
+    const overlay = document.getElementById('nav-overlay');
+
+    if (event && event.currentTarget === chatContainer && event.target !== chatContainer) {
+        return;
+    }
+    // 1. Calculate the center position of the clicked button
+    if (event && event.currentTarget) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const originX = rect.left + (rect.width / 2);
+        const originY = rect.top + (rect.height / 2);
+
+        // 2. Tell CSS to grow the overlay from those exact coordinates
+        chatContainer.style.transformOrigin = `${originX}px ${originY}px`;
+    }
+
+    // 3. Toggle active state
+    const isActive = chatContainer.classList.toggle('chat-reveal');
+    document.body.classList.toggle('no-scroll', isActive)
+    
+    if (window.innerWidth < 1024) {
+        navBar.classList.toggle('active', !isActive);
+        overlay.classList.toggle('active', !isActive);
+    }
+
+    if (isActive) {
+    setTimeout(() => {
+        const chatBox = document.getElementById('chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 50); 
+}
+
+}

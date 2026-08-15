@@ -8,6 +8,10 @@ body {
     font-family: "Intel One Mono", monospace;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* NAVBAR PART */
 
 .page-layout {
@@ -74,7 +78,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    box-sizing: border-box;
     width: 100%;
     max-width: 1060px;
     margin: 0 auto;
