@@ -24,13 +24,25 @@ async function sendMessage() {
 
     if (!messageText) return;
 
-    await fetch('/api/send-message', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ sender: sender, message: messageText })
-    });
+    // 1. Reset input INSTANTLY before network call
+    input.value = ''; 
 
-    input.value = ''; // Reset input
+    try {
+        // 2. Send request in background
+        const response = await fetch('/api/send-message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sender: sender, message: messageText })
+        });
+
+        if (!response.ok) {
+            console.error('Failed to send message to server');
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+        // Optional: restore text if sending failed
+        // input.value = messageText; 
+    }
 }
 
 // 1. Prevent the default anchor jump and URL update
