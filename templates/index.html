@@ -417,6 +417,7 @@
 {% endblock %}
 
 {% block scripts %}
+    <script defer src="/_vercel/insights/script.js"></script>
     <script src="{{ url_for('static', filename = 'js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/cert.js') }}" defer></script>
