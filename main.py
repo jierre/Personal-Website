@@ -2,8 +2,12 @@ import os
 from flask import Flask, render_template, redirect, request, jsonify
 from supabase import create_client, Client
 import pusher
+from google import genai
 
 app = Flask(__name__)
+
+# GEMINI KEY
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 # SUPABASE CONFIG
 SUPABASE_URL = "https://ahazphvlrnzjycnsfabv.supabase.co"
@@ -18,6 +22,37 @@ pusher_client = pusher.Pusher(
   cluster='ap1',
   ssl=True
 )
+
+WEBSITE_CONTEXT = """
+You are the personal AI assistant for John Pierre's website.
+Answer questions based strictly on this information:
+
+ABOUT ME:
+- Name: John Pierre
+- Profession: Developer
+- [Add your project/contact details here]
+"""
+
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    data = request.get_json() or {}
+    question = data.get('question', '').strip()
+
+    if not question:
+        return jsonify({'error': 'Question is required'}), 400
+
+    try:
+        # Generate the response using Gemini
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=question,
+            config={'system_instruction': WEBSITE_CONTEXT}
+        )
+        return jsonify({'answer': response.text})
+    except Exception as e:
+        print("Gemini Error:", e)
+        return jsonify({'error': 'Failed to process request'}), 500
+
 
 @app.route('/')
 def home():
