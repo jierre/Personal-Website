@@ -9,30 +9,7 @@
         <p id="aiResponse" style="margin-top: 15px; font-weight: 500;"></p>
     </div>
 
-    <script>
-    async function askAssistant() {
-        const queryInput = document.getElementById('aiQuery');
-        const responseBox = document.getElementById('aiResponse');
-        const question = queryInput.value.trim();
 
-        if (!question) return;
-
-        responseBox.innerText = 'Thinking...';
-
-        try {
-            const res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question: question })
-        });
-
-        const data = await res.json();
-        responseBox.innerText = data.answer || data.error;
-        } catch (err) {
-          responseBox.innerText = 'Error getting an answer. Please try again later.';
-        }
-    }
-    </script>
     <div id="chat-container" class="chat-container" onclick="toggleChat(event)">
             <div id="chat-box" class="chat-box">
                 {% for msg in messages %}
@@ -450,6 +427,30 @@
 {% endblock %}
 
 {% block scripts %}
+    <script>
+        async function askAssistant() {
+            const queryInput = document.getElementById('aiQuery');
+            const responseBox = document.getElementById('aiResponse');
+            const question = queryInput.value.trim();
+
+            if (!question) return;
+
+            responseBox.innerText = 'Thinking...';
+
+            try {
+                const res = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question: question })
+            });
+
+            const data = await res.json();
+            responseBox.innerText = data.answer || data.error;
+            } catch (err) {
+            responseBox.innerText = 'Error getting an answer. Please try again later.';
+            }
+        }
+    </script>
     <script src="{{ url_for('static', filename = 'js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/cert.js') }}" defer></script>
