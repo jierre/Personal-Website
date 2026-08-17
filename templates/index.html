@@ -1,5 +1,38 @@
 {% extends "layout.html" %}
 {% block content %}
+    <!-- AI Assistant Widget -->
+    <div id="ai-widget" style="max-width: 400px; padding: 15px; border: 1px solid #ccc; border-radius: 8px;">
+        <h3>Ask my AI Assistant</h3>
+        <input type="text" id="aiQuery" placeholder="Ask about my skills, projects, etc..." style="width: 70%; padding: 8px;" />
+        <button onclick="askAssistant()" style="padding: 8px 12px;">Ask</button>
+
+        <p id="aiResponse" style="margin-top: 15px; font-weight: 500;"></p>
+    </div>
+
+    <script>
+    async function askAssistant() {
+        const queryInput = document.getElementById('aiQuery');
+        const responseBox = document.getElementById('aiResponse');
+        const question = queryInput.value.trim();
+
+        if (!question) return;
+
+        responseBox.innerText = 'Thinking...';
+
+        try {
+            const res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: question })
+        });
+
+        const data = await res.json();
+        responseBox.innerText = data.answer || data.error;
+        } catch (err) {
+          responseBox.innerText = 'Error getting an answer. Please try again later.';
+        }
+    }
+    </script>
     <div id="chat-container" class="chat-container" onclick="toggleChat(event)">
             <div id="chat-box" class="chat-box">
                 {% for msg in messages %}
@@ -417,7 +450,6 @@
 {% endblock %}
 
 {% block scripts %}
-    <script defer src="/_vercel/insights/script.js"></script>
     <script src="{{ url_for('static', filename = 'js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/cert.js') }}" defer></script>

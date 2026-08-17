@@ -53,9 +53,5 @@ def send_message():
 
     return jsonify({'status': 'success'})
 
-@app.route('/layout', methods=['GET'])
-def layout():
-    return render_template("layout.html")
-
 if __name__ == '__main__':
     app.run(debug=True)
