@@ -1,12 +1,29 @@
 {% extends "layout.html" %}
 {% block content %}
     <!-- AI Assistant Widget -->
-    <div id="ai-widget" style="max-width: 400px; padding: 15px; border: 1px solid #ccc; border-radius: 8px;">
-        <h3>Ask my AI Assistant</h3>
-        <input type="text" id="aiQuery" placeholder="Ask about my skills, projects, etc..." style="width: 70%; padding: 8px;" />
-        <button onclick="askAssistant()" style="padding: 8px 12px;">Ask</button>
+    <button id="ai-toggle-btn" onclick="toggleAIChat()">
+        💬
+    </button>
 
-        <p id="aiResponse" style="margin-top: 15px; font-weight: 500;"></p>
+    <!-- Pop-up Chat Container -->
+    <div id="ai-chat-window" class="ai-chat-hidden">
+        <div class="ai-chat-header">
+            <span>Ask Jarvis!</span>
+            <button class="ai-close-btn" onclick="toggleAIChat()">&times;</button>
+        </div>
+
+        <!-- Message Bubble Area -->
+        <div id="ai-chat-messages" class="ai-chat-messages">
+            <div class="ai-message ai">
+                Hello! How can I help you today?
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="ai-chat-input-area">
+            <input type="text" id="aiQuery" placeholder="Ask a question..." onkeydown="handleKeyPress(event)" />
+            <button onclick="askAssistant()">Send</button>
+        </div>
     </div>
 
 
@@ -427,30 +444,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script>
-        async function askAssistant() {
-            const queryInput = document.getElementById('aiQuery');
-            const responseBox = document.getElementById('aiResponse');
-            const question = queryInput.value.trim();
-
-            if (!question) return;
-
-            responseBox.innerText = 'Thinking...';
-
-            try {
-                const res = await fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ question: question })
-            });
-
-            const data = await res.json();
-            responseBox.innerText = data.answer || data.error;
-            } catch (err) {
-            responseBox.innerText = 'Error getting an answer. Please try again later.';
-            }
-        }
-    </script>
+    <script src="{{ url_for('static', filename = 'js/aiChat.js') }}" defer></script>
     <script src="{{ url_for('static', filename = 'js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/slider.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/cert.js') }}" defer></script>
