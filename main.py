@@ -1,5 +1,4 @@
 import os
-import traceback
 from flask import Flask, render_template, redirect, request, jsonify
 from supabase import create_client, Client
 import pusher
@@ -8,8 +7,7 @@ from google import genai
 app = Flask(__name__)
 
 # GEMINI KEY
-api_key = os.environ.get("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key) if api_key else genai.Client()
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 # SUPABASE CONFIG
 SUPABASE_URL = "https://ahazphvlrnzjycnsfabv.supabase.co"
@@ -37,30 +35,24 @@ ABOUT ME:
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
+    data = request.get_json() or {}
+    question = data.get('question', '').strip()
+
+    if not question:
+        return jsonify({'error': 'Question is required'}), 400
+
     try:
-        data = request.get_json() or {}
-        question = data.get('question', '').strip()
-
-        if not question:
-            return jsonify({'error': 'Question is required'}), 400
-
-        # Verify API Key exists before calling Google
-        if not os.environ.get("GEMINI_API_KEY"):
-            return jsonify({'error': 'GEMINI_API_KEY environment variable is missing on Vercel'}), 500
-
+        # Generate the response using Gemini
         response = client.models.generate_content(
-            model='gemini-3.6-flash',
+            model='gemini-3.5-flash',
             contents=question,
             config={'system_instruction': WEBSITE_CONTEXT}
         )
-        
         return jsonify({'answer': response.text})
-
     except Exception as e:
-        # Print full error stack trace to Vercel logs
-        print("ERROR IN CHAT ROUTE:", traceback.format_exc())
-        return jsonify({'error': str(e)}), 500
-
+        print("Gemini Error:", e)
+        return jsonify({'error': 'Failed to process request'}), 500
+    
 
 @app.route('/')
 def home():
