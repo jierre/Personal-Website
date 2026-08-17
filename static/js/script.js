@@ -48,7 +48,7 @@ async function sendMessage() {
 
 // 1. Prevent the default anchor jump and URL update
 
-document.querySelectorAll('.nav-item').forEach(link => {
+document.querySelectorAll('.redirect').forEach(link => {
     link.addEventListener('click', function (e) {
         // 1. Prevent the default anchor jump and URL update
         e.preventDefault();
