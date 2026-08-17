@@ -36,6 +36,7 @@ pydantic_core==2.46.4
 PyJWT==2.13.0
 PyNaCl==1.6.2
 pyOpenSSL==26.4.0
+python-dotenv==1.2.3
 realtime==2.31.0
 requests==2.34.2
 six==1.17.0

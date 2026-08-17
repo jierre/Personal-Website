@@ -1,3 +1,20 @@
+# Dependencies (NEVER commit node_modules)
+node_modules/
+
+# Environment variables & API keys
 .env
-venv/
+.env*.local
+
+# Python cache files
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Vercel local build cache
+.vercel/
+
+# OS system files
+.DS_Store
+Thumbs.db
