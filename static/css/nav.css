@@ -1,11 +1,49 @@
-/* SHARED MUTED ICON STYLING (Matches text gray #666 instead of stark black) */
+.top-header, 
+.nav-overlay {
+    display: none;
+}
+
+.nav-bar-container {
+    position:sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-left: 30px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-right: 1px solid rgba(184, 183, 183, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-item {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: rgb(82, 81, 81);
+}
+
+.nav-bar button {
+    height: 15px;
+    width: 15px;
+    padding:0;
+    margin: 0;
+    background-color: white;
+    border: none;
+}
+
 .nav-icon {
     color: #666666;
     stroke: #666666;
     transition: color 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
 }
 
-/* 1. TOP SECTION */
+/*  TOP SECTION */
 .nav-top {
     margin-top:30px;
     display: flex;
@@ -24,7 +62,6 @@
     letter-spacing: -0.5px;
 }
 
-/* Availability Status Badge */
 .status-badge {
     display: flex;
     align-items: center;
@@ -45,7 +82,6 @@
     white-space: nowrap;
 }
 
-/* Top Chat Button */
 button.chat-btn {
     display: flex;
     align-items: center;
@@ -78,7 +114,7 @@ button.chat-btn {
 }
 
 
-/* 2. MIDDLE SECTION (NAV LINKS) */
+/* MIDDLE SECTION (NAV LINKS) */
 .nav-middle {
     display: flex;
     flex-direction: column;
@@ -126,7 +162,7 @@ button.chat-btn {
     color: #111111;
 }
 
-/* 3. BOTTOM SECTION */
+/* BOTTOM SECTION */
 .nav-bottom {
     margin-bottom:30px;
     display: flex;
@@ -170,4 +206,62 @@ button.chat-btn {
     color: #111111;
     stroke: #111111;
     transform: translateY(-2px);
+}
+
+@media (max-width: 1023px) {
+    .nav-bar-container {
+        position: fixed;
+        width: 200px;
+        background-color: #ffffff;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.08);
+        transform: translateX(-100%); 
+        z-index: 1001;
+    }
+
+    .nav-bar-container.active {
+        transform: translateX(0);
+    }
+
+
+    .nav-overlay.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 60px;
+        padding: 0 24px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #eaeaea;
+        z-index: 999;
+    }
+
+    .brand-name {
+        font-family: monospace, sans-serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #111111;
+    }
+
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: #111111;
+        padding: 4px;
+    }
 }
