@@ -35,8 +35,8 @@
             </div>
 
             <div id ="chat-user" class="chat-user">
-                <input type="text" id="username" placeholder="Your Name" value="Visitor">
-                <input type="text" id="chat-input" placeholder="Type a message...">
+                <input type="text" id="username" placeholder="Your Name" value="Visitor" onkeydown="keyPress(event)">
+                <input type="text" id="chat-input" placeholder="Type a message..." onkeydown="keyPress(event)">
                 <button onclick="sendMessage()">Send</button>
             </div>
     </div>

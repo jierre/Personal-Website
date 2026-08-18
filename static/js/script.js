@@ -17,6 +17,12 @@ channel.bind('new-message', function(data) {
 });
 
 // Send message function
+function keyPress(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
 async function sendMessage() {
     const input = document.getElementById('chat-input');
     const usernameInput = document.getElementById('username');

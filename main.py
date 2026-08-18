@@ -107,7 +107,7 @@ def send_message():
     if not text:
         return jsonify({'status': 'error', 'message': 'Message cannot be empty'}), 400
 
-    payload = {
+    payload = {                                        
         'sender_name': sender,
         'message': text
     }
