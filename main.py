@@ -41,7 +41,7 @@ ABOUT ME:
   2. [Website Portfolio]: [A personal website featuring my background, tech stack, experience, projects, certifications, and contact details.]
 - Contact Info: {
                 'email': jlpampilon.pacs@gmail.com
-                'github': https://github.com/jlpampilonpacs-art
+                'github': https://github.com/jierre
                 'instagram': https://www.instagram.com/jpzz.zr/}
 - Education : {
                 'School' : Polytechnic University of the Philippines
