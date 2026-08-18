@@ -1,6 +1,6 @@
 
 // Initialize Pusher Client (Use your Pusher Key and Cluster)
-const pusher = new Pusher('8af230300b27d50ac58e', {
+const pusher = new Pusher('8823898587590159aaf2', {
     cluster: 'ap1'
 });
 

@@ -15,16 +15,22 @@ api_key = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key) if api_key else genai.Client()
 
 # SUPABASE CONFIG
-SUPABASE_URL = os.environ.ger("SUPABASE_URL")
-SUPABASE_KEY = os.environ.ger("SUPABASE_KEY")
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # PUSHER CONFIG
+
+PUSHER_APP_ID = os.environ.get("PUSHER_APP_ID")
+PUSHER_KEY = os.environ.get("PUSHER_KEY")
+PUSHER_SECRET = os.environ.get("PUSHER_SECRET")
+PUSHER_CLUSTER = os.environ.get("PUSHER_CLUSTER")
+
 pusher_client = pusher.Pusher(
-  app_id='2186109',
-  key='8af230300b27d50ac58e',
-  secret='d1ac00b709f9273858db',
-  cluster='ap1',
+  app_id= PUSHER_APP_ID,
+  key= PUSHER_KEY,
+  secret= PUSHER_SECRET,
+  cluster= PUSHER_CLUSTER,
   ssl=True
 )
 
