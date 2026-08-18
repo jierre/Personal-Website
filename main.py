@@ -15,8 +15,8 @@ api_key = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key) if api_key else genai.Client()
 
 # SUPABASE CONFIG
-SUPABASE_URL = "https://ahazphvlrnzjycnsfabv.supabase.co"
-SUPABASE_KEY = "sb_publishable_9TX39uWChlAr3J-a-2-oaQ_8IUS2I9C"
+SUPABASE_URL = os.environ.ger("SUPABASE_URL")
+SUPABASE_KEY = os.environ.ger("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # PUSHER CONFIG
