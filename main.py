@@ -115,8 +115,10 @@ def send_message():
     # 1. Save to Supabase DB
     supabase.table('chat_messages').insert(payload).execute()
 
-    # 2. Trigger real-time broadcast via Pusher to all connected clients
-    pusher_client.trigger('chat-channel', 'new-message', payload)
+    try:
+        pusher_client.trigger('chat-channel', 'new-message', payload)
+    except Exception as e:
+        print("Pusher Trigger Error:", str(e))
 
     return jsonify({'status': 'success'})
 
