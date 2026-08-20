@@ -7,7 +7,7 @@ FolioAI is an interactive personal portfolio designed to go beyond the limitatio
 
 The website uses a minimalist design because I wanted the content and functionality to remain the main focus. Rather than filling the interface with unnecessary visual elements, I used a clean layout, simple typography, consistent spacing, and subtle transitions. This makes the portfolio easier to navigate and allows visitors to quickly find information about my projects, skills, and experience without being distracted by the design.
 
-#### Features
+### Features
 Interactive Portfolio
 
 The main purpose of FolioAI is to present my skills, projects, and experience in an interactive way. Visitors can scroll through the different sections of the website and learn more about my background, technical skills, projects, and experience. The frontend was built using HTML5, CSS3, and JavaScript, with responsive layouts designed to work across different screen sizes.
@@ -16,7 +16,7 @@ The portfolio is structured so that visitors can navigate through the content wi
 
 The project section is also designed to give visitors a better understanding of the applications and technologies I have worked with. Rather than only listing projects, the website provides additional information about their purpose, functionality, and technical implementation.
 
-#### Real-Time Community Chat
+### Real-Time Community Chat
 
 One of the main interactive features of FolioAI is its real-time community chat. This allows visitors to communicate with each other directly through the portfolio and transforms the website from a simple information page into a more interactive platform.
 
@@ -24,7 +24,7 @@ I used Pusher to handle real-time message broadcasting. When a user submits a me
 
 This means that multiple users can have the chat open at the same time and see new messages as they are sent. The system uses event-based communication instead of requiring the browser to repeatedly request new messages from the server. This provides a smoother experience for users and demonstrates how real-time functionality can be integrated into a web application.
 
-#### Chat Moderation
+### Chat Moderation
 
 Because the chat is publicly accessible, allowing users to send anything without moderation could result in inappropriate or abusive messages. To address this problem, FolioAI includes a server-side moderation system that checks messages before they are sent to the global chat.
 
@@ -38,7 +38,7 @@ This also makes it possible to update the custom word list without changing the 
 
 If a message is rejected, the Flask backend returns an HTTP 400 response to the frontend. JavaScript then handles the response and displays an appropriate error message to the user. The rejected message is not broadcast to the chat, preventing it from being displayed to other users.
 
-#### AI Assistant
+### AI Assistant
 
 FolioAI also includes an AI assistant powered by Google's Gemini API. Visitors can ask questions about my projects, skills, or the technologies used to build the website.
 
@@ -48,51 +48,51 @@ The frontend collects the user's question and communicates with the backend, whi
 
 Integrating the Gemini API also allowed me to gain experience working with an external AI service and understanding how an application can send user input to an API and process the resulting response.
 
-#### Technologies Used
+### Technologies Used
 
-#### Frontend
-##### HTML5
+### Frontend
+#### HTML5
 
 HTML5 is used to create the structure of the portfolio and define the different sections and elements displayed to visitors.
 
-##### CSS3
+#### CSS3
 
 CSS3 is used to control the appearance of the website, including the minimalist layout, typography, spacing, responsiveness, animations, and visual transitions.
 
-##### JavaScript
+#### JavaScript
 
 JavaScript handles the interactive behavior of the website. It is responsible for client-side interactions, sending requests to the backend, handling chat messages, displaying responses, processing errors, and updating elements of the page dynamically.
 
-#### Backend
+### Backend
 
-##### Python
+#### Python
 
 Python is used for the server-side programming of FolioAI. It handles the application's backend logic and communication between the frontend and external services.
 
-##### Flask
+#### Flask
 
 Flask is the web framework used to create the backend and API endpoints. It receives requests from the frontend, processes chat messages, performs moderation, communicates with Supabase, and handles requests involving the Gemini API and Pusher.
 
 
-#### Database
+### Database
 
-##### Supabase
+#### Supabase
 
 Supabase is used for persistent data storage. FolioAI uses a Supabase database to store the custom bad_words table used by the chat moderation system. The application retrieves these words and incorporates them into the active moderation system when the server starts.
 
-#### Real-Time Communication
+### Real-Time Communication
 
-##### Pusher
+#### Pusher
 
 Pusher is responsible for real-time communication within the community chat. It broadcasts chat events to connected users, allowing messages to appear immediately without requiring page refreshes or constant polling.
 
-#### AI
+### AI
 
-##### Gemini API
+#### Gemini API
 
 The Gemini API powers the AI assistant. It receives questions from visitors and generates responses that are displayed directly within the portfolio.
 
-#### Project Files
+### Project Files
 
 The main frontend files contain the structure, styling, and interactive behavior of the website. The HTML files define the different sections and elements displayed to users, including the portfolio content, project information, chat interface, and AI assistant interface.
 
