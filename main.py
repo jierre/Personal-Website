@@ -1,10 +1,11 @@
 import os
 import traceback
-from flask import Flask, render_template, redirect, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from supabase import create_client, Client
 import pusher
 from dotenv import load_dotenv
 from google import genai
+from glin_profanity import Filter
 
 load_dotenv()
 
@@ -57,7 +58,27 @@ ABOUT ME:
 RULES:
 - Be polite, concise, and helpful.
 - If asked something not in this info, say: "I don't have that detail on the website, but you can reach out via email!"
+- If asked aggressively or contains bad words, kindly say: "Please be respectful, bad words are not allowed"
 """
+
+def init_profanity_filter():
+    db_words = []
+
+    try:
+        response = supabase.table('bad_words').select('word').limit(5000).execute()
+        db_words = [row['word'].strip().lower() for row in response.data if row.get('word')]
+        print(f"Successfully loaded {len(db_words)} custom words from Supabase.")
+    except Exception as e:
+        print("Could not load custom bad words from DB:", str(e))
+
+    return Filter({
+        "languages": ["english"],
+        "detect_leetspeak": True,
+        "leetspeak_level": "moderate",
+        "custom_words": db_words  
+    })
+
+profanity_filter = init_profanity_filter()
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
@@ -107,6 +128,12 @@ def send_message():
     if not text:
         return jsonify({'status': 'error', 'message': 'Message cannot be empty'}), 400
 
+    if profanity_filter.is_profane(text):
+        return jsonify({
+            'status': 'error', 
+            'message': 'Please keep the chat respectful. Bad words are not allowed.'
+        }), 400
+    
     payload = {                                        
         'sender_name': sender,
         'message': text
