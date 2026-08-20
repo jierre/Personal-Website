@@ -1,5 +1,4 @@
-
-// Initialize Pusher Client (Use your Pusher Key and Cluster)
+// Initialize Pusher Client
 const pusher = new Pusher('8823898587590159aaf2', {
     cluster: 'ap1'
 });
@@ -31,7 +30,7 @@ async function sendMessage() {
 
     if (!messageText) return;
 
-    // 1. Reset input INSTANTLY before network call
+    // 1. Reset input INSTANTLY before network call to avoid spam
     input.value = ''; 
 
     try {
@@ -41,23 +40,26 @@ async function sendMessage() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ sender: sender, message: messageText })
         });
+
         const data = await response.json();
+
         if (!response.ok) {
             console.error('Failed to send message to server');
             setTimeout(() => {
                 alert(data.message);
+                // restore text if sending failed
+                input.value = messageText; 
             }, 500);
             return;
         }
     } catch (error) {
         console.error('Network error:', error);
-        // Optional: restore text if sending failed
-        // input.value = messageText; 
+        // restore text if sending failed
+        input.value = messageText; 
     }
 }
 
 // 1. Prevent the default anchor jump and URL update
-
 document.querySelectorAll('.redirect').forEach(link => {
     link.addEventListener('click', function (e) {
         // 1. Prevent the default anchor jump and URL update
@@ -138,6 +140,5 @@ function toggleChat(event) {
         const chatBox = document.getElementById('chat-box');
         chatBox.scrollTop = chatBox.scrollHeight;
     }, 50); 
-}
-
+    }
 }

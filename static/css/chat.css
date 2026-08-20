@@ -223,7 +223,6 @@
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* Status Indicator Dot */
 .ai-chat-header span {
     display: flex;
     align-items: center;
@@ -272,7 +271,6 @@
     background-color: #ffffff;
 }
 
-/* Custom Minimalist Scrollbar */
 .ai-chat-messages::-webkit-scrollbar {
     width: 5px;
 }
@@ -294,7 +292,6 @@
     border-radius: 8px;
 }
 
-/* AI Messages on the LEFT - Subtle Off-White/Gray Box */
 .ai-message.ai {
     align-self: flex-start;
     background-color: #f4f4f6;
@@ -303,7 +300,6 @@
     border-top-left-radius: 2px;
 }
 
-/* User Messages on the RIGHT - High-Contrast Black Box */
 .ai-message.user {
     align-self: flex-end;
     background-color: #000000;
@@ -312,7 +308,6 @@
     border-top-right-radius: 2px;
 }
 
-/* Input Section */
 .ai-chat-input-area {
     display: flex;
     padding: 12px;
@@ -360,7 +355,7 @@
 }
 
 @media (max-width: 1023px) {
-   /* Floating Trigger Button */
+
     #ai-toggle-btn {
         bottom: 16px;
         right: 16px;
@@ -368,7 +363,7 @@
         height: 48px;
     }
 
-    /* Fluid Chat Window using dynamic viewport units (dvh) */
+    
     #ai-chat-window {
         position: fixed;
         bottom: 74px;
@@ -376,21 +371,20 @@
         left: 16px;
         width: auto;
         max-width: 420px;
-        margin-left: auto; /* Kept aligned to right side */
+        margin-left: auto; 
         height: min(520px, calc(100dvh - 96px));
         border-radius: 10px;
     }
 
-    /* Slightly wider bubbles for narrower screens */
+    
     .ai-message {
         max-width: 88%;
-        font-size: 13px; /* Improves readability on mobile touches */
+        font-size: 13px; 
     }
 
-    /* Better touch targets for mobile */
     .ai-chat-input-area input {
         padding: 12px;
-        font-size: 14px; /* Prevents auto-zoom on iOS */
+        font-size: 14px; 
     }
 
     .ai-chat-input-area button {
