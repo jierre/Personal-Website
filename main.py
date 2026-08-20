@@ -68,7 +68,9 @@ ABOUT ME:
 - Contact Info: {
                 'email': jlpampilon.pacs@gmail.com
                 'github': https://github.com/jierre
-                'instagram': https://www.instagram.com/jpzz.zr/}
+                'instagram': https://www.instagram.com/jpzz.zr/
+                'edX username': jp09_8
+                }
 - Education : {
                 'School' : Polytechnic University of the Philippines
                 'Year' : Freshman
