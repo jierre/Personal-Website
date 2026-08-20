@@ -1,3 +1,43 @@
+/* --  HERO SECTION -- */
+
+.tech-stack-section {
+  margin-top: 30px;
+
+}
+
+.logo-marquee {
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px; 
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Fades edges smoothly */
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: scrollLoop 12s linear infinite;
+}
+
+.logo-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);  
+  }
+}
+
+.tech-item img{
+  height: 40px;
+  width: 40px;
+}
+
 /* PROJECTS */
 .carousel-section {
   width: 100%;
@@ -64,7 +104,6 @@
   cursor: pointer;
   user-select: none;
   
-  /* Smooth transform transition */
   transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
               opacity 0.45s ease, 
               box-shadow 0.3s ease;
@@ -262,12 +301,11 @@
   position: relative;
   display: flex;
   gap: 1.25rem;
-  height: 260px; /* Vertical viewport container height */
+  height: 260px; 
   overflow: hidden !important;
   padding: 0.5rem 0;
 }
 
-/* Vertical Timeline Indicator Track */
 .cert-timeline-rail {
   position: relative;
   width: 3px;
@@ -310,7 +348,6 @@
   flex-direction: column;
   justify-content: space-between;
   
-  /* Smooth Y-axis movement and scale shifts */
   transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
               opacity 0.45s ease, 
               border-color 0.3s ease;
@@ -393,7 +430,7 @@
   }
 
   .badge {
-    font-size: 0.55rem !important; /* ~8.8px */
+    font-size: 0.55rem !important; 
     padding: 0.2rem 0.4rem !important;
   }
 
@@ -402,20 +439,18 @@
     margin-bottom: 0.2rem !important;
   }
 
-  /* Specificity boost for title (targets tag + class) */
   .card h1,
   .card h2,
   .card h3,
   .card .card-title {
-    font-size: 1rem !important; /* ~12px - Safe minimum height */
+    font-size: 1rem !important;
     line-height: 1.25 !important;
     margin-bottom: 0.3rem !important;
   }
 
-  /* Specificity boost for description */
   .card p,
   .card .card-desc {
-    font-size: 0.80rem !important; /* ~10.8px - Safe render limit */
+    font-size: 0.80rem !important;
     line-height: 1.3 !important;
   }
 
@@ -444,7 +479,6 @@
     line-height: 1.25 !important;  
   }
 
-  /* Specificity boost for description */
   .cert-desc {
     font-size: 0.70rem !important;  
     line-height: 1.35 !important;

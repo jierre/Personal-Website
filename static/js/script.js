@@ -41,9 +41,13 @@ async function sendMessage() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ sender: sender, message: messageText })
         });
-
+        const data = await response.json();
         if (!response.ok) {
             console.error('Failed to send message to server');
+            setTimeout(() => {
+                alert(data.message);
+            }, 500);
+            return;
         }
     } catch (error) {
         console.error('Network error:', error);
